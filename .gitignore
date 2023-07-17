@@ -1,3 +1,4 @@
 /.env
 bandmanager/.env
+bandmanager/__pycache__
 bandmanager/api/__pycache__
