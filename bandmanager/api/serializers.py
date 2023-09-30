@@ -7,7 +7,7 @@ from .models import Person, EmailPreference, Section, Band, Commentary, Voluntee
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
-        fields = ('uuid', 'address', 'city', 'state', 'zip','country','phone','email','youth','headshot_url', 'social_media_info')
+        fields = ('uuid', 'first_name', 'last_name', 'address', 'city', 'state', 'zip','country','phone','email','youth','headshot_url', 'social_media_info')
     
 
 class EmailPreferenceSerializer(serializers.ModelSerializer):
@@ -37,6 +37,7 @@ class BandSerializer(serializers.ModelSerializer):
         model=Band
         fields=(
             'uuid',
+            'name',
             'address',
             'social_media_info',
             'contact',
