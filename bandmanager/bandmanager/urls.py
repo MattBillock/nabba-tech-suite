@@ -37,6 +37,7 @@ router.register(r'contests', views.ContestView)
 router.register(r'musicians', views.MusicianView)
 router.register(r'directors', views.DirectorView)
 router.register(r'ensembles', views.EnsembleView)
+router.register(r'partners', views.PartnerView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -8,9 +8,9 @@ from urllib.parse import quote_plus, urlencode
 from rest_framework import viewsets
 from .serializers import PersonSerializer, EmailPreferenceSerializer, SectionSerializer, BandSerializer, CommentarySerializer, \
       VolunteerSerializer, ScoreSerializer, MusicSerializer, ScoreSerializer, PurchasesSerializer, VenueSerializer, \
-        PerformanceSlotSerializer, JudgeSerializer, ContestSerializer, MusicianSerializer, DirectorSerializer, EnsembleSerializer
+        PerformanceSlotSerializer, JudgeSerializer, ContestSerializer, MusicianSerializer, DirectorSerializer, EnsembleSerializer, PartnerSerializer
 from .models import Person, EmailPreference, Section, Band, Commentary, Volunteer, Score, Music, \
-        Score, Purchases, Venue, PerformanceSlot, Judge, Contest, Musician, Director, Ensemble
+        Score, Purchases, Venue, PerformanceSlot, Judge, Contest, Musician, Director, Ensemble, Partner
 
 oauth = OAuth()
 
@@ -122,3 +122,7 @@ class DirectorView(viewsets.ModelViewSet):
 class EnsembleView(viewsets.ModelViewSet):
     serializer_class = EnsembleSerializer
     queryset = Ensemble.objects.all()
+
+class PartnerView(viewsets.ModelViewSet):
+    serializer_class = PartnerSerializer
+    queryset = Partner.objects.all()

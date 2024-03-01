@@ -1,4 +1,13 @@
-/.env
+# Ignore .env files
+.env
+
+# Ignore .env files in the bandmanager directory
 bandmanager/.env
+
+# Ignore __pycache__ directories
 bandmanager/__pycache__
 bandmanager/api/__pycache__
+# Ignore .pyc files
+*.pyc
+bandmanager/bandmanager/__pycache__/settings.cpython-311.pyc
+bandmanager/bandmanager/__pycache__/urls.cpython-311.pyc
