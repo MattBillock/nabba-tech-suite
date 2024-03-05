@@ -210,17 +210,11 @@ class Command(BaseCommand):
         print(bands)
         # Get list of bands for contest ID provided
         contest_dict["band_list"] = self.build_band_list(bands, contest)
-        # Get list of performance slots for contest ID provided
-        contest_dict["performance_schedule"] = self.build_performance_schedule(contest)
-        # get list of music for contest id provided
-        # get venue info for contest id provided
-        contest_dict["venue_details"] = self.build_venue_details(contest)
-        # get director info for contest ID provided
-        # get partners for contest ID provided
-        contest_dict["partner_details"] = self.build_partner_details(contest)
-
-
-        open('contest.json', 'w').write(json.dumps(contest_dict, indent=4, cls=DateTimeEncoder))
+        
+        with open(f"band_media_{contest.name}.csv", 'w') as csvfile:
+            csvfile.write("band_name, band_photo_url, band_logo_url, conductor_photo\n")
+            for band in contest_dict["band_list"]:
+                csvfile.write(f"\n{band['name']}, {band['band_photo']}, {band['band_logo']}, {band['conductor_photo']}\n")
 
 
         self.stdout.write(self.style.SUCCESS('Contest file generated'))
